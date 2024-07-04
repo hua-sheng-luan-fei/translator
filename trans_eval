@@ -1,0 +1,28 @@
+from trans_main import *
+
+model = model.eval()
+def translate(src: str):
+
+    # 将与原句子分词后，通过词典转为index，然后增加<bos>和<eos>
+    src = torch.tensor([0] + zh_vocab(zh_tokenizer(src)) + [1]).unsqueeze(0).to(device)
+    # 首次tgt为<bos>
+    tgt = torch.tensor([[0]]).to(device)
+    # 一个一个词预测，直到预测为<eos>，或者达到句子最大长度
+    for i in range(max_length):
+        # 进行transformer计算
+        out = model(src, tgt)
+        # 预测结果，因为只需要看最后一个词，所以取`out[:, -1]`
+        predict = model.predictor(out[:, -1])
+        # 找出最大值的index
+        y = torch.argmax(predict, dim=1)
+        # 和之前的预测结果拼接到一起
+        tgt = torch.concat([tgt, y.unsqueeze(0)], dim=1)
+        # 如果为<eos>，说明预测结束，跳出循环
+        if y == 1:
+            break
+    # 将预测tokens拼起来
+    tgt = ''.join(ru_vocab.lookup_tokens(tgt.squeeze().tolist())).replace("<s>", "").replace("</s>", "")
+    return tgt
+
+output  = translate('你好，很高兴见到你！')
+print(output)
