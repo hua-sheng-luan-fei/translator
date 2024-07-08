@@ -6,3 +6,4 @@ trans_eval.py 是翻译器的调试部分
 
 sentiment_analysis.py 实现了俄语的情感分析功能
 
+transformer_loss 中记录了翻译器训练时的日志
