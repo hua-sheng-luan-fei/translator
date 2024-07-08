@@ -9,6 +9,7 @@ from transformers import Trainer, TrainingArguments
 
 filepath = './data/senti_train.json'
 
+#获取数据
 def get_data(filepath):
     sentimap = {"positive": 1, "negative": 0, "neutral": 2}
     file = open(filepath, 'r', encoding='utf-8')
@@ -27,12 +28,6 @@ def get_data(filepath):
     return texts, labels
 
 texts, labels = get_data(filepath)
-
-
-# # 加载数据（这里我们假设已经有一个包含评论内容和标签的CSV文件）
-# data = pd.read_csv('social_media_comments.csv')
-# texts = data['content'].values
-# labels = data['sentiment'].values
 
 
 # 划分训练集和测试集
@@ -94,7 +89,6 @@ predicted_labels = np.argmax(predictions, axis=1)
 print("Accuracy: ", accuracy_score(test_labels, predicted_labels))
 print(classification_report(test_labels, predicted_labels))
 
-# 使用模型进行实时舆情监控
 sentiment_pipeline = pipeline('sentiment-analysis', model=model, tokenizer=tokenizer)
 
 sample_text = "Мне сегодня очень весело!"
