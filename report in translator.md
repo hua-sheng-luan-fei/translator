@@ -145,7 +145,7 @@
 
 ## 收敛曲线
 
-![](E:\translator\trans.png)
+![](./trans.png)
 
 ```python
 class TranslationLoss(nn.Module):
