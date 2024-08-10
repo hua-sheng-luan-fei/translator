@@ -113,7 +113,7 @@ trainer.train()
 
 训练过程中记录损失值并绘制收敛曲线。通过这些曲线可以观察模型的训练效果和收敛速度。
 
-![](E:\translator\sentiment.png)
+![](./sentiment.png)
 
 ## 模型效果
 
