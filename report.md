@@ -31,7 +31,7 @@
 
 本次模型的详细结构图如下所示。
 
-![](E:\translator\model_translator.png)
+![](./pic/model_translator.png)
 
 ### 2.1 数据准备
 
