@@ -16,7 +16,7 @@
 
 模型的结构图如下图所示。
 
-![](E:\translator\translator model.png)
+![](./pic/translator model.png)
 
 
 
@@ -167,7 +167,7 @@
 
 翻译器模型的收敛曲线如下所示。
 
-![](E:\translator\trans.png)
+![](./pic/trans.png)
 
 代码定义如下。
 
@@ -212,7 +212,7 @@ class TranslationLoss(nn.Module):
 
 情感分析模型的详细结构图如下。
 
-![](E:\translator\model_sentiment_analysis.png)
+![](./pic/model_sentiment_analysis.png)
 
 ## 6 训练方法描述
 
@@ -301,7 +301,7 @@ trainer.train()
 
 训练过程中记录损失值并绘制收敛曲线。通过这些曲线可以观察模型的训练效果和收敛速度。
 
-![](E:\translator\sentiment.png)
+![](./pic/sentiment.png)
 
 ## 8 模型效果
 
