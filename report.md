@@ -16,7 +16,7 @@
 
 模型的结构图如下图所示。
 
-![](./pic/translator model.png)
+![](./pic/translator_model.png)
 
 
 
